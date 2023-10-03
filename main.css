@@ -15,7 +15,7 @@
     @apply font-headings;
   }
   .container {
-    @apply max-w-[1300px];
+    @apply max-w-[1300px] xl:max-w-[1449.99px] lg:max-w-[1199.99px] md:max-w-[991.99px] sm:max-w-[767.99px] xs:max-w-[479.99pxx];
   }
 }
 
