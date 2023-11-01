@@ -1,17 +1,21 @@
-/* Scroll to Top button START */
-var toTopButton = document.getElementById("to-top-button");
+const showOnPx = 200;
+const backToTopButton = document.getElementById('to-top-button');
 
-// When the user scrolls down 200px from the top of the document, show the button
-window.onscroll = function () {
-	if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-		toTopButton.classList.remove("hidden");
-	} else {
-		toTopButton.classList.add("hidden");
-	}
+const scrollContainer = () => {
+    return document.documentElement || document.body;
 };
+
+document.addEventListener('scroll', () => {
+    if (scrollContainer().scrollTop > showOnPx) {
+        backToTopButton.classList.remove('hidden');
+        backToTopButton.classList.add('grid');
+    } else {
+        backToTopButton.classList.add('hidden');
+        backToTopButton.classList.remove('grid');
+    }
+});
 
 // When the user clicks on the button, scroll to the top of the document
 function goToTop() {
-	window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-/* Scroll to Top button END */
